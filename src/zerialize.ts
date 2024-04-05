@@ -20,8 +20,8 @@ import {
   SzPrimitive,
   SzType,
   STRING_KINDS,
-} from "./types";
-import { ZodTypes, ZTypeName } from "./zod-types";
+} from "./types.js";
+import { ZodTypes, ZTypeName } from "./zod-types.js";
 
 export const PRIMITIVES = {
   ZodString: "string",

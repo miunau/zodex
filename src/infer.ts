@@ -1,5 +1,3 @@
-import { RequiredKeysOf, OptionalKeysOf } from "type-fest";
-
 import {
   SzType,
   SzOptional,
@@ -16,7 +14,7 @@ import {
   SzFunction,
   SzEnum,
   SzPromise,
-} from "./types";
+} from "./types.js";
 
 type PrimitiveTypes = {
   string: string;
@@ -33,10 +31,10 @@ type PrimitiveTypes = {
   void: void;
 };
 
-type RequiredKeys<T extends Record<string, any>> = {
+export type RequiredKeys<T extends Record<string, any>> = {
   [K in keyof T]: T[K] extends SzOptional ? never : K;
 }[keyof T];
-type OptionalKeys<T extends Record<string, any>> = {
+export type OptionalKeys<T extends Record<string, any>> = {
   [K in keyof T]: T[K] extends SzOptional ? K : never;
 }[keyof T];
 

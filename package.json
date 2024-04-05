@@ -1,58 +1,41 @@
 {
-  "name": "zodex",
-  "version": "0.0.0-dev",
-  "description": "Type-safe (de)serialization for Zod",
-  "main": "dist/index.js",
+  "name": "@auth70/zodex-esm",
+  "version": "0.7.1",
+  "type": "module",
+  "description": "Type-safe (de)serialization for Zod (esm fork of zodex with minimal deps)",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "typesVersions": {
+      "*": {
+          ".": [
+              "./dist"
+          ]
+      }
+  },
   "keywords": [
     "zod",
     "serialization",
     "deserialization",
     "reflection"
   ],
-  "author": "Gregor Weber<mail@dflate.io>",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install",
-    "check-style": "prettier --check src",
-    "lint": "eslint src/**",
-    "test": "vitest --coverage",
     "build": "rm -rf dist && tsc",
     "prepublish": "pnpm run build"
   },
   "peerDependencies": {
-    "@types/react": "^18.x",
-    "react": "^18.x",
     "zod": "^3.x"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "type-fest": "^3.12.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.6.5",
-    "@commitlint/config-conventional": "17.6.5",
-    "@types/react": "18.2.12",
-    "@typescript-eslint/eslint-plugin": "5.59.11",
-    "@typescript-eslint/parser": "5.59.11",
-    "@vitest/coverage-c8": "^0.32.2",
-    "@vitest/coverage-v8": "^0.32.2",
-    "esbuild": "0.18.4",
-    "eslint": "8.43.0",
-    "eslint-config-prettier": "8.8.0",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.2",
-    "prettier": "2.8.8",
-    "typescript": "5.1.3",
-    "vitest": "0.32.2"
-  },
-  "packageManager": "pnpm@8.1.0",
-  "files": [
-    "dist/*"
-  ],
-  "lint-staged": {
-    "*.ts": "eslint --cache --fix src/**",
-    "*.{ts,js,json,md}": "prettier --write"
+    "type-fest": "^4.15.0",
+    "typescript": "5.4.4"
   }
 }

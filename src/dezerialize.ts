@@ -1,5 +1,5 @@
 import { z } from "zod";
-import {
+import type {
   SzOptional,
   SzNullable,
   SzDefault,
@@ -29,8 +29,8 @@ import {
   SzUndefined,
   SzUnknown,
   SzVoid,
-} from "./types";
-import { ZodTypes } from "./zod-types";
+} from "./types.js";
+import type { ZodTypes } from "./zod-types.js";
 
 type DistributiveOmit<T, K extends keyof any> = T extends any
   ? Omit<T, K>
